@@ -7,19 +7,18 @@ const initializeRoot = (distributors) => {
     return [
         {
             ...transformNode(rootDistributor),
-            children: [] // No carga hijos al inicio
+            children: []
         }
     ];
 };
 
-// Función que transforma un distribuidor en un nodo del árbol
 const transformNode = (distributor) => {
     const { full_name, username, status, product_name, category_name, binary_placement, children } = distributor;
 
     return {
         label: full_name,
         type: 'person',
-        className: binary_placement === 'left' ? 'p-left' : 'p-right', // Clases para la posición
+        className: binary_placement === 'left' ? 'p-left' : 'p-right', 
         expanded: false,
         data: {
             name: username,
@@ -27,18 +26,16 @@ const transformNode = (distributor) => {
             producto: product_name || 'N/A',
             categoria: category_name || 'N/A',
         },
-        originalChildren: children || [], // Guarda los hijos originales pero sin mostrarlos al inicio
+        originalChildren: children || [], 
         children: []
     };
 };
 
-// Reorganiza los hijos según binary_placement
 const sortChildren = (children) => {
     if (children.length < 2) return children;
 
     const [firstChild, secondChild] = children;
 
-    // Si el primer hijo es "right" y el segundo es "left", los intercambiamos
     if (firstChild.binary_placement === 'Right' && secondChild.binary_placement === 'Left') {
         return [secondChild, firstChild];
     }
