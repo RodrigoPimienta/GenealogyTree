@@ -1,41 +1,27 @@
-/* styles.css */
-
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Arial, sans-serif;
-  }
-  
-  #root {
+#root {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-  }
-  
+    min-height: 100vh; /* Usa min-height en lugar de height para contenido largo */
+}
+
+/* Crea un contenedor flexible para el contenido principal */
+main {
+    flex: 1; /* Esto hará que el contenido principal ocupe el espacio restante */
+    padding: 20px;
+}
+
+/* Modifica el footer para que no use posicionamiento */
+footer {
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+}
   header {
     text-align: center;
     padding: 5px;
     background-color: #282c34;
     color: white;
-  }
-  
-  main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: start; /* Alinea los elementos en la parte superior */
-    padding: 20px;
-    overflow: auto;
-  }
-  
-  footer {
-    background-color: #f0f0f0;
-    text-align: center;
-    padding: 10px;
-    width: 100%;
-    position: relative; /* Evita que se sobreponga si hay más contenido */
-    bottom: 0;
   }
   
   /* Mejoras adicionales */

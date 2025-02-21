@@ -3,7 +3,7 @@ import "./App.css"
 
 function App() {
   return (
-    <div id="root">
+    <>
       <header>
         <h1>Tree App</h1>
       </header>
@@ -13,7 +13,7 @@ function App() {
       <footer>
         <p>By Rodrigo Pimienta Monterrubio</p>
       </footer>
-    </div>
+    </>
   )
 }
 
