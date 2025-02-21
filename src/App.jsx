@@ -1,4 +1,4 @@
-import Tree from "./components/Tree"
+import Tree from "./components/tree2"
 import "./App.css"
 
 function App() {
@@ -11,7 +11,6 @@ function App() {
         <Tree />
       </main>
       <footer>
-        <p>By Rodrigo Pimienta Monterrubio</p>
       </footer>
     </>
   )
