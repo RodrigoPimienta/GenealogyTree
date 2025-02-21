@@ -2,7 +2,7 @@ import { OrganizationChart } from 'primereact/organizationchart';
 import { useState } from 'react';
 import { initializeRoot, sortChildren, transformNode } from '../services/tree';
 import {TreeNode} from './TreeNode';
-import dataJSON from '../../public/data.json';
+import dataJSON from '../mocks/data.json';
 
 export default function Tree() {
   const [treeData, setTreeData] = useState(() => initializeRoot(dataJSON.data.attributes));
