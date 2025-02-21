@@ -17,7 +17,7 @@ export default function Tree() {
     return rootNode;
   };
 
-  const [treeData, setTreeData] = useState(() => initializeWithExpanded(dataJSON.data.attributes, false));
+  const [treeData, setTreeData] = useState(() => initializeRoot(dataJSON.data.attributes));
 
   useEffect(() => {
     // Desplazar al primer nodo después de que el árbol se haya cargado
@@ -57,7 +57,7 @@ export default function Tree() {
   const showAllTree = () => {
     // primero actualizar el expanden del nodo raíz a true
 
-    setTreeData([initializeWithExpanded(dataJSON.data.attributes)[0]]);
+    setTreeData([initializeWithExpanded(dataJSON.data.attributes, true)[0]]);
 
     const expandAllNodes = (node) => {
         node.expanded = true;
@@ -82,7 +82,7 @@ export default function Tree() {
 
     // poner el atributo 'expanded' del nodo raíz a false
 
-    setTreeData(initializeWithExpanded(dataJSON.data.attributes, true));
+    setTreeData(initializeRoot(dataJSON.data.attributes));
 
   };
 
