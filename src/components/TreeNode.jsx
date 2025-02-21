@@ -7,7 +7,7 @@ export const TreeNode = ({node, toggleExpand}) => {
             {node.label}
           </div>
           <div className="node-content">
-            <div><strong>Usuario:</strong> {node.data.name}</div>
+            <div><strong>{node.data.name}</strong></div>
             {node.expanded && (
               <>
                 <div><strong>Producto:</strong> {node.data.producto}</div>
